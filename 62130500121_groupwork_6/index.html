@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+
+
+<body>
+
+  <!-- <div id="app" class="h-screen w-full bg-gray-200 flex items-start justify-start">
+    <img src="./images/1.jpg" class="w-1/3 h-full">
+    <div class="w-full flex items-center justify-end">
+      <i class="material-icons">face</i>
+      <p class="font-semibold text-xl tracking-wider uppercase px-3">{{ msg }}​​</p>
+    </div>
+  </div> -->
+
+  <div id="app" class="">
+    <h1 @click='show = !show'>{{msg}}</h1>
+    <h2 v-show='show'>This is v-show</h2>
+    <h2 v-if='show'>This is v-if</h2>
+    <a v-bind:href="url">Click Me</a>
+  </div>
+
+  <!-- <div id="app">
+    <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
+      <img :src="imgupper" class="w-full" />
+      <div class="flex justify-center -mt-8">
+        <img src="images/me.jpg" class="w-1/2 rounded-full border-solid border-white border-2 -mt-3">
+      </div>
+      <div class="text-center px-3 pb-6 pt-2">
+        <h3 class="text-black text-sm bold font-sans">{{ name }}</h3>
+        <p class="mt-2 font-sans font-light text-grey-dark">{{ text1 }}</p>
+      </div>
+      <div class="flex justify-center pb-3 text-grey-dark">
+        <div class="text-center mr-3 border-r pr-3">
+          <h2>{{ photos }}</h2>
+          <span>Photos</span>
+        </div>
+        <div class="text-center">
+          <h2>{{ friends }}</h2>
+          <span>Friends</span>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <!-- my main.js -->
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

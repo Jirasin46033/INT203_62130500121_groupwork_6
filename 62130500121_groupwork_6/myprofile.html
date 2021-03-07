@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+</head>
+
+
+
+<body>
+
+  <div id="app" class="flex justify-center">
+    <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
+      <img :src="imgupper" class="w-full" />
+      <div class="flex justify-center -mt-8">
+        <img :src="imgprofile" class="w-1/2 rounded-full border-solid border-white border-2 -mt-3">
+      </div>
+      
+      <div class="flex justify-center pb-3 text-grey-dark">
+        <div class="text-center mr-3 border-r pr-3">
+          <h2>{{ photos }}</h2>
+          <span>Photos</span>
+        </div>
+        <div class="text-center">
+          <h2>{{ friends }}</h2>
+          <span>Friends</span>
+        </div>
+      </div>
+    </div>
+
+    <form @submit.prevent="checkForm">
+      <div class="bg-white p-3 shadow-sm rounded-sm">
+        <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+            <span clas="text-green-500">
+                <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+            </span>
+            <span class="tracking-wide">About</span>
+        </div>
+        <p v-if="errors" class="text-red-500">
+          <b>Please correct the following error(s):</b>
+          <ul>
+             <li v-for="error in errors" class="text-red-500">{{ error }}</li> 
+          </ul>
+      </p>
+        <div class="text-gray-700">
+            <div class="grid md:grid-cols-2 text-sm">
+                <div class="grid grid-cols-2">
+                    <div class="px-4 py-2 font-semibold">First Name</div>
+                    <input type="text" id="firstname" v-model="firstname" name="firstname" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="px-4 py-2 font-semibold">Last Name</div>
+                    <input type="text" id="lastname" v-model="lastname" name="lastname" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="px-4 py-2 font-semibold">Gender</div>
+                    <!-- <input type="text" id="gender" v-model="gender" name="gender" class="bg-gray-100 rounded px-4 py-2 mb-4"> -->
+                    <div class="flex flex-row pt-2 space-x-2">
+                      <input type="radio" id="Male" v-model="gender" name="gender" value="M" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                      <label for="Male">Male</label>
+                      <input type="radio" id="Female" v-model="gender" name="gender" value="F" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                      <label for="Female">Female</label>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="px-4 py-2 font-semibold">Age</div>
+                    <input type="text" id="age" v-model="age" name="age" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="px-4 py-2 font-semibold">Email</div>
+                    <input type="text" id="email" v-model="email" name="email" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="px-4 py-2 font-semibold">Phone Number</div>
+                    <input type="text" id="phone" v-model="phone" name="phone" class="bg-gray-100 rounded px-4 py-2 mb-4">
+                </div>
+                <div >
+                  <input type="submit" value="Submit" class="px-8 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">
+              </div>
+            </div>
+        </div>
+    </form>
+
+  </div>
+
+
+
+  <!-- my main.js -->
+
+  <script src="./profile.js"></script>
+</body>
+
+</html>
